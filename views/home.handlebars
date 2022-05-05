@@ -1,0 +1,20 @@
+<div class="stickyNotes">
+	{{#each posts}}
+	<div class="note-container">
+		<form name="NoteForm" action="/update/{{id}}" method="POST">
+			<textarea name="content" id="note{{id}}" class="note" onChange="submit()">{{content}}</textarea>
+			<script type="text/javascript">
+				function submit() {
+					document.getElementById("NoteForm").submit();
+				}
+			</script>
+		</form>
+		<form action="/delete/{{id}}" method="GET">
+			<button id="del-note-bt" class="del-note" type="submit">x</button>
+		</form>
+	</div>
+	{{/each}}
+	<form action="/add" method="POST">
+		<button id="add-note-bt" class="add-note" type="submit">+</button>
+	</form>
+</div>	

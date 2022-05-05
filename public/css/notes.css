@@ -1,0 +1,88 @@
+/* Global styles
+-------------------------------------------------*/
+@charset "ISO-8859-1";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&display=swap');
+html {
+    box-sizing: border-box;
+}
+*,
+*:before,
+*.after {
+    box-sizing: inherit;
+}
+:root {
+    --primary: #009578;
+    --secondary: #575757;
+    --color3: #dcdcdc;
+}
+body {
+    background: var(--primary);
+    color: black; /* text color */
+    margin: 0; /* removes all spaces of the body */
+    padding: 0;
+    font-family: 'Noto Serif', serif;
+    font-size: 15px;
+    line-height: 150%; /* 150% of font-size */
+}
+
+/* Body / Notes
+-------------------------------------------------*/
+.stickyNotes {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, 200px);
+	padding: 24px;
+	gap: 24px;
+}
+
+.note-container {
+	position: relative;
+}
+
+.note {
+	height: 200px;
+	box-sizing: border-box;
+	padding: 16px;
+	border: none;
+	border-radius: 10px;
+	box-shadow: 0 0 7px rgba(0, 0, 0, 0.15);
+	resize: none;
+	font-family: sans-serif;
+	font-size: 16px;
+}
+
+.add-note {
+	height: 200px;
+	width: 100%;
+	border: none;
+	outline: none;
+	background: rgba(0, 0, 0, 0.1);
+	border-radius: 10px;
+	font-size: 120px;
+	color: rgba(0, 0, 0, 0.5);
+	cursor: pointer;
+	transition: background 0.2s;
+}
+.add-note:hover{
+	background: rgba(0, 0, 0, 0.2);
+}
+
+.del-note,
+.del-note:hover,
+.del-note:focus,
+.del-note:active {
+	height: 20px;
+	border: none;
+	outline: none;
+	background: inherit;
+	font-size: 15px;
+	color: var(--secondary);
+	cursor: pointer;
+	position: absolute;
+    top: 2px;
+    right: 0px; 
+    z-index: 200;
+}
+.del-note:hover {
+	background: rgba(0, 0, 0, 0.2);
+	border-radius: 10px;
+}
